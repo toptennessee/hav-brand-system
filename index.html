@@ -1,13 +1,20 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HĀV Brand Refinement Template</title>
-  <meta name="description" content="A refined brand template for HĀV: behavioral support, clarity, action, and progress." />
+
+  <title>HĀV Brand Refinement</title>
+  <meta name="description" content="HĀV brand refinement: behavioral support, shared insight, informed action, and measurable progress." />
+
+  <link rel="icon" href="./assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="./assets/favicon.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --navy: #143A46;
@@ -45,7 +52,10 @@
 
     a { color: inherit; text-decoration: none; }
 
-    .shell { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .shell {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
 
     .nav {
       position: sticky;
@@ -64,40 +74,84 @@
       gap: 20px;
     }
 
-    .brand-mark { display: flex; align-items: center; gap: 12px; font-weight: 800; color: var(--navy); }
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 850;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+    }
 
     .logo-box {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      background: var(--navy);
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: linear-gradient(145deg, var(--navy), var(--navy-deep));
       color: white;
       display: grid;
       place-items: center;
-      font-weight: 800;
-      letter-spacing: -0.06em;
+      font-weight: 900;
+      letter-spacing: -0.08em;
       box-shadow: 0 14px 40px rgba(20, 58, 70, 0.22);
       position: relative;
       overflow: hidden;
     }
 
+    .logo-box span {
+      position: relative;
+      z-index: 2;
+      transform: translateY(-1px);
+    }
+
+    .logo-box::before {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border: 3px solid var(--teal);
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-radius: 50%;
+      right: 7px;
+      bottom: 7px;
+      transform: rotate(8deg);
+      opacity: 0.95;
+    }
+
     .logo-box::after {
       content: "";
       position: absolute;
-      width: 26px;
-      height: 14px;
-      border: 3px solid var(--teal);
-      border-top: 0;
-      border-radius: 0 0 20px 20px;
-      bottom: 10px;
-      left: 9px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--coral);
+      right: 8px;
+      bottom: 8px;
+      z-index: 3;
     }
 
-    .nav-links { display: flex; gap: 18px; font-size: 0.88rem; color: var(--muted); font-weight: 600; }
+    .logo-box.light {
+      background: white;
+      color: var(--navy);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-weight: 650;
+    }
 
     .hero { padding: 86px 0 54px; }
 
-    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 34px; align-items: center; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: center;
+    }
 
     .eyebrow {
       display: inline-flex;
@@ -109,12 +163,17 @@
       border-radius: 999px;
       color: var(--navy);
       font-size: 0.78rem;
-      font-weight: 800;
+      font-weight: 850;
       text-transform: uppercase;
       letter-spacing: 0.09em;
     }
 
-    .dot { width: 8px; height: 8px; background: var(--coral); border-radius: 50%; }
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--coral);
+      border-radius: 50%;
+    }
 
     h1 {
       margin: 22px 0 18px;
@@ -126,9 +185,18 @@
 
     .hero h1 span { color: var(--teal); }
 
-    .hero-copy { font-size: clamp(1.12rem, 2vw, 1.45rem); max-width: 680px; color: #34464c; }
+    .hero-copy {
+      font-size: clamp(1.12rem, 2vw, 1.45rem);
+      max-width: 680px;
+      color: #34464c;
+    }
 
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
 
     .btn {
       display: inline-flex;
@@ -137,7 +205,7 @@
       min-height: 48px;
       padding: 0 18px;
       border-radius: 999px;
-      font-weight: 800;
+      font-weight: 850;
       border: 1px solid transparent;
     }
 
@@ -167,7 +235,14 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .pill { padding: 7px 10px; border-radius: 999px; background: var(--sage-soft); color: var(--navy); font-size: 0.75rem; font-weight: 800; }
+    .pill {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--sage-soft);
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 850;
+    }
 
     .app-body { padding: 22px; }
 
@@ -180,10 +255,22 @@
       min-height: 170px;
     }
 
-    .progress-panel h3 { margin: 0 0 10px; font-size: 1.5rem; letter-spacing: -0.04em; }
-    .progress-panel p { margin: 0; color: rgba(255,255,255,0.76); }
+    .progress-panel h3 {
+      margin: 0 0 10px;
+      font-size: 1.5rem;
+      letter-spacing: -0.04em;
+    }
 
-    .mini-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .progress-panel p {
+      margin: 0;
+      color: rgba(255,255,255,0.76);
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
 
     .mini-card {
       border: 1px solid var(--line);
@@ -197,11 +284,34 @@
 
     section { padding: 58px 0; }
 
-    .section-head { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 24px; }
-    .section-head h2 { margin: 0; font-size: clamp(2rem, 5vw, 4rem); line-height: 0.98; letter-spacing: -0.06em; color: var(--navy); max-width: 720px; }
-    .section-head p { margin: 0; max-width: 390px; color: var(--muted); }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
 
-    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      color: var(--navy);
+      max-width: 720px;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 390px;
+      color: var(--muted);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
 
     .card {
       background: rgba(255,255,255,0.76);
@@ -211,7 +321,12 @@
       min-height: 230px;
     }
 
-    .card h3 { margin: 0 0 10px; font-size: 1.2rem; color: var(--navy); }
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      color: var(--navy);
+    }
+
     .card p { margin: 0; color: var(--muted); }
 
     .number {
@@ -226,7 +341,12 @@
       margin-bottom: 36px;
     }
 
-    .split { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 22px; align-items: stretch; }
+    .split {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 22px;
+      align-items: stretch;
+    }
 
     .panel {
       background: var(--white);
@@ -236,8 +356,22 @@
       box-shadow: 0 18px 60px rgba(14,42,51,0.08);
     }
 
-    .palette { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
-    .swatch { min-height: 160px; border-radius: 22px; padding: 14px; display: flex; flex-direction: column; justify-content: end; border: 1px solid rgba(0,0,0,0.06); }
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .swatch {
+      min-height: 160px;
+      border-radius: 22px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
     .swatch strong { font-size: 0.82rem; }
     .swatch span { font-size: 0.74rem; opacity: 0.74; }
 
@@ -248,22 +382,82 @@
     .cream { background: var(--cream); color: var(--navy); }
 
     .type-spec { display: grid; gap: 14px; }
-    .type-row { padding: 18px; border-radius: 18px; border: 1px solid var(--line); background: rgba(247,244,238,0.65); }
-    .type-row small { display: block; color: var(--muted); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
-    .display-type { font-size: clamp(2.2rem, 5vw, 4.2rem); line-height: .92; letter-spacing: -0.07em; color: var(--navy); font-weight: 800; }
-    .headline-type { font-size: 2rem; line-height: 1; letter-spacing: -0.05em; color: var(--navy); font-weight: 800; }
 
-    .voice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .type-row {
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(247,244,238,0.65);
+    }
+
+    .type-row small {
+      display: block;
+      color: var(--muted);
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 6px;
+    }
+
+    .display-type {
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      line-height: .92;
+      letter-spacing: -0.07em;
+      color: var(--navy);
+      font-weight: 850;
+    }
+
+    .headline-type {
+      font-size: 2rem;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      color: var(--navy);
+      font-weight: 850;
+    }
+
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
     .do-dont { min-height: auto; }
-    .list { display: grid; gap: 10px; margin-top: 18px; }
-    .list div { padding: 12px 14px; background: rgba(247,244,238,.72); border: 1px solid var(--line); border-radius: 14px; color: #3c4c51; }
+
+    .list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .list div {
+      padding: 12px 14px;
+      background: rgba(247,244,238,.72);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: #3c4c51;
+    }
 
     .reason-table { display: grid; gap: 12px; }
-    .reason-row { display: grid; grid-template-columns: 190px 1fr; gap: 18px; padding: 18px; border-radius: 18px; border: 1px solid var(--line); background: rgba(255,255,255,0.68); }
+
+    .reason-row {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 18px;
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.68);
+    }
+
     .reason-row strong { color: var(--navy); }
     .reason-row p { margin: 0; color: var(--muted); }
 
-    .mockups { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .mockups {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
     .ad-card {
       min-height: 420px;
       border-radius: 32px;
@@ -275,17 +469,50 @@
       position: relative;
       border: 1px solid var(--line);
     }
+
     .ad-card.dark { background: var(--navy); color: white; }
     .ad-card.light { background: white; color: var(--navy); }
-    .ad-card h3 { font-size: clamp(2.4rem, 5vw, 4.6rem); line-height: .9; letter-spacing: -0.07em; margin: 0; position: relative; z-index: 2; }
-    .ad-card p { max-width: 360px; position: relative; z-index: 2; }
-    .orb { position: absolute; width: 260px; height: 260px; border-radius: 50%; background: rgba(45,156,154,.22); right: -70px; bottom: -70px; }
+
+    .ad-card h3 {
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      line-height: .9;
+      letter-spacing: -0.07em;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .ad-card p {
+      max-width: 360px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .orb {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(45,156,154,.22);
+      right: -70px;
+      bottom: -70px;
+    }
+
     .ad-card.light .orb { background: rgba(242,140,118,.22); }
 
-    footer { padding: 52px 0; color: var(--muted); }
+    footer {
+      padding: 52px 0;
+      color: var(--muted);
+    }
 
     @media (max-width: 860px) {
-      .hero-grid, .split, .mockups, .voice-grid { grid-template-columns: 1fr; }
+      .hero-grid,
+      .split,
+      .mockups,
+      .voice-grid {
+        grid-template-columns: 1fr;
+      }
+
       .card-grid { grid-template-columns: 1fr; }
       .palette { grid-template-columns: 1fr 1fr; }
       .section-head { display: block; }
@@ -295,18 +522,21 @@
     }
   </style>
 </head>
+
 <body>
   <nav class="nav">
     <div class="shell nav-inner">
       <a class="brand-mark" href="#top">
-        <span class="logo-box">H</span>
-        <span>HĀV Brand Template</span>
+        <span class="logo-box"><span>H</span></span>
+        <span>HĀV Brand Refinement</span>
       </a>
+
       <div class="nav-links">
         <a href="#strategy">Strategy</a>
         <a href="#system">System</a>
         <a href="#psychology">Psychology</a>
         <a href="#applications">Applications</a>
+        <a href="./deliverables/">Deliverables</a>
       </div>
     </div>
   </nav>
@@ -315,26 +545,39 @@
     <header class="hero shell">
       <div class="hero-grid">
         <div>
-          <div class="eyebrow"><span class="dot"></span> refined brand direction</div>
+          <div class="eyebrow"><span class="dot"></span> behavioral support brand refinement</div>
+
           <h1>HĀV<span>.</span></h1>
-          <p class="hero-copy">A behavioral support platform designed to help families and professionals understand behavior, take informed action, and track real progress together.</p>
+
+          <p class="hero-copy">
+            A behavioral support platform designed to help families and professionals understand behavior, take informed action, and track meaningful progress together.
+          </p>
+
           <div class="hero-actions">
             <a href="#strategy" class="btn primary">View brand logic</a>
-            <a href="#applications" class="btn secondary">See applications</a>
+            <a href="./deliverables/" class="btn secondary">Open deliverables portal</a>
           </div>
         </div>
 
         <div class="showcase" aria-label="HĀV product style preview">
           <div class="app-card">
             <div class="app-top">
-              <div class="brand-mark"><span class="logo-box">H</span><span>HĀV</span></div>
+              <div class="brand-mark">
+                <span class="logo-box"><span>H</span></span>
+                <span>HĀV</span>
+              </div>
+
               <span class="pill">Behavior Plan</span>
             </div>
+
             <div class="app-body">
               <div class="progress-panel">
                 <h3>Understand what is happening.</h3>
-                <p>Turn daily behavior observations into clearer patterns, shared context, and practical next steps.</p>
+                <p>
+                  Turn daily behavior observations into clearer patterns, shared context, and practical next steps.
+                </p>
               </div>
+
               <div class="mini-grid">
                 <div class="mini-card"><strong>Insight</strong><span>Identify patterns</span></div>
                 <div class="mini-card"><strong>Action</strong><span>Use simple tools</span></div>
@@ -349,24 +592,35 @@
 
     <section id="strategy" class="shell">
       <div class="section-head">
-        <h2>Keep the name. Clarify the system.</h2>
-        <p>This refinement keeps HĀV's original behavioral-support center while giving it a more credible, warmer, and more structured identity.</p>
+        <h2>Keep the name. Strengthen the system.</h2>
+        <p>
+          This refinement keeps HĀV centered on behavioral support while improving credibility, warmth, hierarchy, and usability.
+        </p>
       </div>
+
       <div class="card-grid">
         <article class="card">
           <div class="number">1</div>
           <h3>Understand behavior</h3>
-          <p>The brand begins with clarity because caregivers and professionals need a shared view of what is happening before they can act well.</p>
+          <p>
+            The brand begins with clarity because caregivers and professionals need a shared view of what is happening before they can respond well.
+          </p>
         </article>
+
         <article class="card">
           <div class="number">2</div>
           <h3>Take informed action</h3>
-          <p>The platform should feel practical, not abstract. The identity supports decisions, routines, intervention tools, and next steps.</p>
+          <p>
+            HĀV should feel practical, not abstract. The identity supports decisions, routines, behavior tools, and next steps.
+          </p>
         </article>
+
         <article class="card">
           <div class="number">3</div>
-          <h3>Track real progress</h3>
-          <p>Progress is the proof layer. The visual system uses charts, sequence, and structure to reinforce measurable improvement over time.</p>
+          <h3>Track meaningful progress</h3>
+          <p>
+            Progress is the proof layer. The visual system uses sequence, structure, and calm hierarchy to reinforce measurable improvement over time.
+          </p>
         </article>
       </div>
     </section>
@@ -374,13 +628,19 @@
     <section id="system" class="shell">
       <div class="section-head">
         <h2>Visual identity system</h2>
-        <p>Clinical enough for trust. Soft enough for families. Structured enough for behavior tracking.</p>
+        <p>
+          Clear enough for professionals. Warm enough for families. Structured enough for behavior tracking.
+        </p>
       </div>
+
       <div class="split">
         <div class="panel">
           <h3>Color palette</h3>
-          <p>The palette balances credibility, calm, growth, and warmth without becoming childish or overly clinical.</p>
+          <p>
+            The palette balances credibility, calm, growth, and warmth without becoming childish, generic, or overly clinical.
+          </p>
         </div>
+
         <div class="palette">
           <div class="swatch navy"><strong>Deep Navy</strong><span>#143A46<br>trust / structure</span></div>
           <div class="swatch teal"><strong>Clear Teal</strong><span>#2D9C9A<br>clarity / action</span></div>
@@ -395,20 +655,27 @@
       <div class="split">
         <div class="panel">
           <h3>Typography</h3>
-          <p>Inter is used here as a clean, readable system font direction. It is modern, highly legible, and easy to apply across app screens, decks, and marketing material.</p>
+          <p>
+            Inter gives HĀV a clean digital foundation. It is readable, modern, and easy to apply across app screens, pitch decks, web pages, and client-facing material.
+          </p>
         </div>
+
         <div class="panel type-spec">
           <div class="type-row">
             <small>Display</small>
             <div class="display-type">Understand. Act. Progress.</div>
           </div>
+
           <div class="type-row">
             <small>Headline</small>
-            <div class="headline-type">Behavior support that families and professionals can use together.</div>
+            <div class="headline-type">Behavior support families and professionals can use together.</div>
           </div>
+
           <div class="type-row">
             <small>Body</small>
-            <p>Use plain, direct language. Avoid jargon when speaking to families. Use clinical terms only when they create clarity.</p>
+            <p>
+              Use plain, direct language. Avoid jargon when speaking to families. Use clinical terms only when they create clarity.
+            </p>
           </div>
         </div>
       </div>
@@ -417,8 +684,11 @@
     <section class="shell">
       <div class="section-head">
         <h2>Messaging framework</h2>
-        <p>The words should move in the same sequence as the product experience: clarity, action, progress.</p>
+        <p>
+          The language should follow the same sequence as the product experience: clarity, action, progress.
+        </p>
       </div>
+
       <div class="voice-grid">
         <article class="card do-dont">
           <h3>Use</h3>
@@ -426,13 +696,14 @@
             <div>Understand behavior with more clarity.</div>
             <div>Turn observations into practical next steps.</div>
             <div>Support families and professionals working together.</div>
-            <div>Track progress over time.</div>
+            <div>Track meaningful progress over time.</div>
           </div>
         </article>
+
         <article class="card do-dont">
           <h3>Avoid</h3>
           <div class="list">
-            <div>Overpromising stress reduction.</div>
+            <div>Overpromising outcomes.</div>
             <div>Making the brand feel like a generic wellness app.</div>
             <div>Using language that sounds too clinical for families.</div>
             <div>Replacing behavior support with vague care language.</div>
@@ -444,32 +715,59 @@
     <section id="psychology" class="shell">
       <div class="section-head">
         <h2>Psychology behind the choices</h2>
-        <p>This gives you the explanation layer: not just what changed, but why it works.</p>
+        <p>
+          This is the explanation layer: not just what changed, but why the refinement supports trust, clarity, and use.
+        </p>
       </div>
+
       <div class="reason-table">
         <div class="reason-row">
-          <strong>Deep navy</strong>
-          <p>Creates trust and authority. It keeps the brand credible for clinicians, educators, and families making serious decisions.</p>
+          <strong>Logo mark</strong>
+          <p>
+            The H remains simple and ownable. The arc suggests support, continuity, and progress without turning the symbol into a smile, heart, or generic care icon.
+          </p>
         </div>
+
+        <div class="reason-row">
+          <strong>Deep navy</strong>
+          <p>
+            Creates trust and authority. It keeps the brand credible for clinicians, educators, and families making serious decisions.
+          </p>
+        </div>
+
         <div class="reason-row">
           <strong>Teal</strong>
-          <p>Signals clarity and movement. It is healthcare-adjacent without feeling cold, making it useful for action states and insight moments.</p>
+          <p>
+            Signals clarity and movement. It feels healthcare-adjacent without becoming cold, making it useful for action states and insight moments.
+          </p>
         </div>
+
         <div class="reason-row">
           <strong>Sage</strong>
-          <p>Softens the clinical structure. It introduces regulation, care, and steadiness without turning the brand into a lifestyle/wellness identity.</p>
+          <p>
+            Softens the clinical structure. It introduces regulation, care, and steadiness without turning the brand into a lifestyle or wellness identity.
+          </p>
         </div>
+
         <div class="reason-row">
           <strong>Coral</strong>
-          <p>Adds human warmth and emotional reward. It should appear sparingly for milestones, encouragement, and moments of progress.</p>
+          <p>
+            Adds human warmth and emotional reward. It should appear sparingly for milestones, encouragement, approvals, and progress moments.
+          </p>
         </div>
+
         <div class="reason-row">
           <strong>Rounded cards</strong>
-          <p>Reduce visual threat and cognitive load. The interface should feel organized, calm, and usable under stress.</p>
+          <p>
+            Reduce visual threat and cognitive load. The interface should feel organized, calm, and usable under stress.
+          </p>
         </div>
+
         <div class="reason-row">
           <strong>Three-step message</strong>
-          <p>Understand → Act → Progress mirrors the user journey. It gives the brand a repeatable structure instead of a collection of disconnected claims.</p>
+          <p>
+            Understand → Act → Progress mirrors the user journey. It gives the brand a repeatable structure instead of disconnected claims.
+          </p>
         </div>
       </div>
     </section>
@@ -477,19 +775,39 @@
     <section id="applications" class="shell">
       <div class="section-head">
         <h2>Application examples</h2>
-        <p>These show how the brand can translate into marketing cards, decks, app screens, and presentation material.</p>
+        <p>
+          These examples show how the brand can translate into marketing cards, decks, app screens, client pages, and presentation material.
+        </p>
       </div>
+
       <div class="mockups">
         <article class="ad-card dark">
-          <div class="brand-mark" style="color:white"><span class="logo-box" style="background:white;color:#143A46">H</span><span>HĀV</span></div>
+          <div class="brand-mark" style="color:white">
+            <span class="logo-box light"><span>H</span></span>
+            <span>HĀV</span>
+          </div>
+
           <h3>Understand behavior. Take action.</h3>
-          <p>Tools for families and professionals to identify patterns, choose next steps, and track meaningful progress.</p>
+
+          <p>
+            Tools for families and professionals to identify patterns, choose next steps, and track meaningful progress.
+          </p>
+
           <div class="orb"></div>
         </article>
+
         <article class="ad-card light">
-          <div class="brand-mark"><span class="logo-box">H</span><span>HĀV</span></div>
+          <div class="brand-mark">
+            <span class="logo-box"><span>H</span></span>
+            <span>HĀV</span>
+          </div>
+
           <h3>Progress is easier to see when everyone has the same picture.</h3>
-          <p>Shared insight, practical tools, and behavior support designed for real family environments.</p>
+
+          <p>
+            Shared insight, practical tools, and behavioral support designed for real family environments.
+          </p>
+
           <div class="orb"></div>
         </article>
       </div>
@@ -497,8 +815,9 @@
   </main>
 
   <footer class="shell">
-    <strong>HĀV Brand Refinement Template</strong><br />
+    <strong>HĀV Brand Refinement</strong><br />
     A polished visual and messaging direction preserving the original behavioral-support foundation.
   </footer>
 </body>
 </html>
+```
