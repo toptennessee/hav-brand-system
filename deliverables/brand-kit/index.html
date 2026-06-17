@@ -1,1 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>HĀV Brand Kit</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#143A46;
+  --teal:#2D9C9A;
+  --sage:#AFC7B6;
+  --coral:#F28C76;
+  --cream:#F7F4EE;
+  --white:#FFFFFF;
+  --ink:#172126;
+  --muted:#667579;
+  --line:rgba(20,58,70,.14);
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:Inter,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.55;
+}
+
+a{color:inherit;text-decoration:none;}
+
+.container{
+  width:min(1100px,calc(100% - 40px));
+  margin:auto;
+}
+
+.nav{
+  padding:24px 0;
+}
+
+.back{
+  display:inline-flex;
+  padding:9px 13px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:white;
+  font-weight:800;
+  color:var(--navy);
+  font-size:.85rem;
+}
+
+.hero{
+  padding:48px 0 40px;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:999px;
+  background:white;
+  border:1px solid var(--line);
+  font-size:.8rem;
+  font-weight:800;
+  color:var(--navy);
+}
+
+h1{
+  font-size:clamp(3rem,8vw,6rem);
+  letter-spacing:-.075em;
+  line-height:.9;
+  margin:20px 0;
+  color:var(--navy);
+}
+
+.lead{
+  max-width:760px;
+  color:#44565c;
+  font-size:1.15rem;
+}
+
+.section{
+  padding:28px 0;
+}
+
+.section h2{
+  color:var(--navy);
+  font-size:clamp(2rem,4vw,3.4rem);
+  letter-spacing:-.06em;
+  line-height:.95;
+  margin:0 0 18px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:24px;
+}
+
+.card h3{
+  margin:0 0 10px;
+  color:var(--navy);
+}
+
+.card p{
+  margin:0;
+  color:var(--muted);
+}
+
+.logo-preview{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:28px;
+  border-radius:28px;
+  background:white;
+  border:1px solid var(--line);
+}
+
+.mark{
+  width:64px;
+  height:64px;
+  border-radius:18px;
+  background:var(--navy);
+  color:white;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:1.5rem;
+  letter-spacing:-.08em;
+}
+
+.wordmark{
+  font-size:2rem;
+  font-weight:900;
+  color:var(--navy);
+  letter-spacing:-.06em;
+}
+
+.palette{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
+}
+
+.swatch{
+  min-height:150px;
+  border-radius:22px;
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  border:1px solid rgba(0,0,0,.06);
+}
+
+.swatch strong{font-size:.9rem;}
+.swatch span{font-size:.8rem;opacity:.8;}
+
+.navy{background:var(--navy);color:white;}
+.teal{background:var(--teal);color:white;}
+.sage{background:var(--sage);color:var(--navy);}
+.coral{background:var(--coral);color:var(--navy);}
+.cream{background:var(--cream);color:var(--navy);}
+
+.rule-list{
+  display:grid;
+  gap:12px;
+}
+
+.rule{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px;
+  color:var(--muted);
+}
+
+.rule strong{
+  color:var(--navy);
+}
+
+footer{
+  padding:50px 0;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<nav class="nav">
+<a class="back" href="../">← Back to Deliverables</a>
+</nav>
+
+<section class="hero">
+<div class="badge">HĀV Deliverable 01</div>
+
+<h1>Brand Kit</h1>
+
+<p class="lead">
+The HĀV brand kit defines the visual and verbal standards for a behavioral support platform built around clarity, informed action, shared support, and meaningful progress.
+</p>
+</section>
+
+<section class="section">
+<h2>Core Brand Direction</h2>
+
+<div class="grid">
+<div class="card">
+<h3>Positioning</h3>
+<p>HĀV is a behavioral support platform that helps families and professionals understand behavior, take informed action, and track meaningful progress together.</p>
+</div>
+
+<div class="card">
+<h3>Brand Feel</h3>
+<p>Clear enough for professionals. Warm enough for families. Structured enough for behavior tracking.</p>
+</div>
+
+<div class="card">
+<h3>Message Sequence</h3>
+<p>Understand behavior. Take informed action. Track meaningful progress.</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2>Logo System</h2>
+
+<div class="logo-preview">
+<div class="mark">H</div>
+<div>
+<div class="wordmark">HĀV</div>
+<p style="margin:4px 0 0;color:#667579;">Simple mark. Strong name. No extra symbolism unless it improves clarity.</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2>Color Palette</h2>
+
+<div class="palette">
+<div class="swatch navy"><strong>Deep Navy</strong><span>#143A46<br>Trust / structure</span></div>
+<div class="swatch teal"><strong>Clear Teal</strong><span>#2D9C9A<br>Clarity / action</span></div>
+<div class="swatch sage"><strong>Soft Sage</strong><span>#AFC7B6<br>Support / regulation</span></div>
+<div class="swatch coral"><strong>Warm Coral</strong><span>#F28C76<br>Milestones / warmth</span></div>
+<div class="swatch cream"><strong>Warm Cream</strong><span>#F7F4EE<br>Space / ease</span></div>
+</div>
+</section>
+
+<section class="section">
+<h2>Typography</h2>
+
+<div class="grid">
+<div class="card">
+<h3>Primary Typeface</h3>
+<p>Inter is recommended for its readability, digital clarity, and clean professional structure.</p>
+</div>
+
+<div class="card">
+<h3>Headlines</h3>
+<p>Use bold, concise headlines with strong hierarchy. Avoid decorative or overly soft typefaces.</p>
+</div>
+
+<div class="card">
+<h3>Body Copy</h3>
+<p>Use plain language. Keep sentences direct. Clinical language should only be used when it adds clarity.</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2>Voice & Tone</h2>
+
+<div class="grid">
+<div class="card">
+<h3>Use</h3>
+<p>Clear, steady, practical, supportive, direct, professional, human.</p>
+</div>
+
+<div class="card">
+<h3>Avoid</h3>
+<p>Overly clinical, overly cozy, vague wellness language, emotional overpromising, generic app language.</p>
+</div>
+
+<div class="card">
+<h3>Best Tone</h3>
+<p>Clinical clarity plus family support.</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2>Usage Rules</h2>
+
+<div class="rule-list">
+<div class="rule"><strong>Keep HĀV as the name.</strong> The refinement strengthens the existing identity instead of renaming the platform.</div>
+<div class="rule"><strong>Lead with behavioral support.</strong> Avoid repositioning HĀV as only caregiver navigation or general family wellness.</div>
+<div class="rule"><strong>Use coral sparingly.</strong> Coral works best for milestones, approvals, progress states, and warmth accents.</div>
+<div class="rule"><strong>Prioritize clarity.</strong> Every design choice should make the platform easier to understand, trust, or use.</div>
+<div class="rule"><strong>Protect credibility.</strong> The brand should feel polished enough for professionals and approachable enough for families.</div>
+</div>
+</section>
+
+<footer>
+<strong>HĀV Brand Kit</strong><br>
+Part of the HĀV Deliverables Portal.
+</footer>
+
+</div>
+
+</body>
+</html>
